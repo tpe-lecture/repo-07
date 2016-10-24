@@ -47,4 +47,8 @@ public class GameBoard extends Board {
         alien.move();
         return alien.isVisible();
     }
+
+    public void drawGameOver(Graphics g){
+        centerText(g, "Babam");
+    }
 }
