@@ -37,7 +37,7 @@ public final class ZooSimulation {
 
         System.out.println("Fütterung...");
 
-        for(int i = 0; i < tiere.length; i++){
+        for (int i = 0; i < tiere.length; i++) {
             futterstelle.gibFutter(tiere[i]);
         }
 //        futterstelle.gibFutter(charlie);
