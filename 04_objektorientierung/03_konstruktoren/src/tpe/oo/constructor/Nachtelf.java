@@ -13,8 +13,7 @@ public class Nachtelf extends Wesen {
 
     // Konstruktoren fehlen. Bitte hier einfügen.
     public Nachtelf(String name){
-        super(name);
-        naturwiderstand = STANDARD_NATURWIDERSTAND;
+        this(name, STANDARD_NATURWIDERSTAND);
     }
 
     public Nachtelf(String name, int naturwiderstand){

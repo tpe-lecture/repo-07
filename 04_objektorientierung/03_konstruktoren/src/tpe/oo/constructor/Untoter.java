@@ -13,8 +13,7 @@ public class Untoter extends Wesen {
 
     // Konstruktoren fehlen. Bitte hier einfügen.
     public Untoter(String name){
-        super(name);
-        unterwasseratmung = STANDARD_UNTERWASSERATMUNG;
+        this(name, STANDARD_UNTERWASSERATMUNG);
     }
 
     public Untoter(String name, int unterwasseratmung){
