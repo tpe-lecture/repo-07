@@ -27,6 +27,7 @@ public class Dreieck extends Figur {
      *
      * @return die Fläche.
      */
+    @Override
     public double flaeche() {
         return grundseite * hoehe / 2;
     }
