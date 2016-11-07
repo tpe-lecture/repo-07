@@ -1,13 +1,23 @@
-// TODO: JavaDoc
+/**
+ * Repräsentiert eine Waehrung.
+ * @author David Casparby
+ *
+ */
 public class Waehrung {
 
-    // TODO: JavaDoc
+    /**
+     * Aktueller Wechselkurs als Integer
+     */
     private final int kurs;
 
-    // TODO: JavaDoc
+    /**
+     * Der Name der Waehrung als String
+     */
     private final String name;
 
-    // TODO: JavaDoc
+    /**
+     * Kuerzel der Waehrung als String
+     */
     private final String kuerzel;
 
     // TODO: JavaDoc
@@ -26,22 +36,36 @@ public class Waehrung {
         this.kuerzel = kuerzel;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Diese Methode rechnet den eingegebenen Betrag in geforderte Waehrung um.
+     * @param betrag Ist der Betrag der umgerechnet werden soll vom Typ long.
+     * @param toWaehrung Die Waehrung in die umgerechnet werden soll vom Typ Waehrung.
+     * @return Umgerechneter Betrag vom Typ long.
+     */
     public long umrechnen(long betrag, Waehrung toWaehrung) {
         return betrag * kurs / toWaehrung.kurs;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Gibt den Kurs der Waehrung dieses Objektes raus
+     * @return Kurs als Integerwert
+     */
     public int getKurs() {
         return kurs;
     }
     
-    // TODO: JavaDoc
+    /**
+     * Gibt den Namen der Waehrung dieses Objektes zurück.
+     * @return Name der Waehrung als String.
+     */
     public String getName() {
         return name;
     }
 
-    // TODO: JavaDoc
+    /**
+     * Gibt den Kuerzel der Waehrung dieses Objektes zurück.
+     * @return Kuerzel als String
+     */
     public String getKuerzel() {
         return kuerzel;
     }
