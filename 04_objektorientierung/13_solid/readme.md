@@ -1,3 +1,4 @@
+
 # Aufgabe: Modellierung einer Klassenhierarchie
 
 ## Lernziel

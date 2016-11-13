@@ -7,20 +7,22 @@ import tpe.oo.metropolis.steuern.Koerperschaftsteuer;
 import tpe.oo.metropolis.steuern.Einkommensteuer;
 
 public class Schurke extends Mutant{
-    
-    private Superkraft schwaeche;
-    //TODO: Muss noch implementiert werden
-    public Schurke(){
-    }
-    //TODO: Muss noch implementiert werden
-    public void kaempfe(){
-    }
-    //TODO: Muss noch implementiert werden, mit Körperschaftssteuer und Einkommenssteuer
-    
-    protected Metro_Dollar zahleSteuern(){
-        Metro_Dollar steuerLast;
-        steuerLast = zahleKoerperschaftsteuern(this);
-        return steuerLast + zahleEinkommensteuern(this);
+
+    private final Superkraft schwaeche = new Superkraft(this);
+
+    public Schurke(String name, Metro_Dollar einkommen, String mutation){
+        super(name, einkommen, mutation);
     }
 
+    //TODO: Laut Aufgabenstellung muss diese Methode nicht implementiert werden
+    public void kaempfe(Superheld gegner){
+    }
+
+    public Metro_Dollar zahltSteuern(){
+        return zahleEinkommensteuer(getEinkommen());
+    }
+
+    public Metro_Dollar getEinkommen(){
+        return super.getEinkommen();
+    }
 }
