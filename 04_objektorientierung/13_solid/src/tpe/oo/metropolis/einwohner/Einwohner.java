@@ -1,5 +1,6 @@
 package tpe.oo.metropolis.einwohner;
 
+import tpe.oo.metropolis.Metropolis;
 import waehrung.Metro_Dollar;
 
 public abstract class Einwohner {
@@ -12,8 +13,14 @@ public abstract class Einwohner {
         this.einkommen = einkommen;
     }
 
-    protected Metro_Dollar getEinkommen(){
+    public Metro_Dollar getEinkommen(){
         return einkommen;
     }
 
+    public void setEinkommen(Metro_Dollar betrag) {
+        int summe = getEinkommen().getWert();
+        summe += betrag.getWert();
+    }
+
+    public abstract Metro_Dollar steuern();
 }

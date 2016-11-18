@@ -8,13 +8,10 @@ public abstract class Mutant extends Einwohner {
 
     private String mutation;
 
-    public Mutant(String name, Metro_Dollar einkommen, String mutation){
+    protected Mutant(String name, Metro_Dollar einkommen, String mutation){
         super(name, einkommen);
         this.mutation = mutation;
     }
 
-    protected Metro_Dollar getEinkommen(){
-        return super.getEinkommen();
-    }
-
+    public abstract Metro_Dollar steuern();
 }
