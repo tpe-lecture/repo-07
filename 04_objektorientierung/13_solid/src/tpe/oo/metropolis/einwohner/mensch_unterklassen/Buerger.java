@@ -38,4 +38,9 @@ public class Buerger extends Mensch implements Einkommensteuerpflichtig {
             return (int)(einkommen * Steuerlast);
 }
 
+    @Override
+    public Metro_Dollar steuern() {
+        return zahleEinkommensteuer();
+    }
+
 }

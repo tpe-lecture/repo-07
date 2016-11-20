@@ -15,5 +15,9 @@ public class Richter extends Mensch {
     //TODO: Muss noch implementiert werden
     public void verurteilen(Schurke angeklakter){
     }
+    @Override
+    public Metro_Dollar steuern() {
+        return new Metro_Dollar(0);
+    }
 
 }

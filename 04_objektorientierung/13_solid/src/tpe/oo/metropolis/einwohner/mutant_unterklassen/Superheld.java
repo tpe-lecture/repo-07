@@ -15,5 +15,10 @@ public class Superheld extends Mutant {
     //TODO: Muss noch implementiert werden
     public void kaempfe(Schurke gegner){
     }
+    @Override
+    public Metro_Dollar steuern() {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
 }

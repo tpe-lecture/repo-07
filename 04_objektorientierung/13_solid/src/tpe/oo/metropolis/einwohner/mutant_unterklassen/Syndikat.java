@@ -7,24 +7,24 @@ public class Syndikat implements Koerperschaftsteuerpflichtig{
 
     private String syndikatenName;
     private Schurke[] mitglieder;
-    private int AnzahlMitglieder = 0;
 
     public Syndikat(String syndikatenName){
         this.syndikatenName = syndikatenName;
     }
 
     public void fügeMitgliedHinzu(Schurke neuesMitglied){
-        AnzahlMitglieder++;
-        Schurke[] neueListe = new Schurke[AnzahlMitglieder];
 
-        if(AnzahlMitglieder == 1){
-            neueListe[0] = neuesMitglied;
+        if(this.mitglieder == null) {
+            mitglieder = new Schurke[1];
+            mitglieder[0] = neuesMitglied;
         }
         else{
-            for(int i = 0; i < neueListe.length - 1; i++){
+            Schurke[] neueListe = new Schurke[mitglieder.length + 1];
+            for(int i = 0; i < mitglieder.length; i++) {
                 neueListe[i] = mitglieder[i];
             }
-            neueListe[AnzahlMitglieder -1] = neuesMitglied;
+            neueListe[neueListe.length-1] = neuesMitglied;
+            this.mitglieder = neueListe;
         }
     }
 
