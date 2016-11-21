@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.util.Random;
+import java.util.Stack;
 
 import de.smits_net.games.framework.board.Board;
 import de.smits_net.games.framework.image.SimpleImage;
@@ -19,7 +20,7 @@ import de.smits_net.games.framework.sprite.Velocity;
 public class GameBoard extends Board {
 
     /** Münzstapel. */
-    // TODO: Münzen als Stack speichern
+    private Stack<Sprite> stapel = new Stack<Sprite>();
 
     /** A moving coin. */
     private Sprite moving;
@@ -43,6 +44,7 @@ public class GameBoard extends Board {
         // Münzen anlegen
         for (int i = 0; i < 20; i++) {
             // TODO: Neue Münzen auf den Stapel legen
+            stapel.push(createCoin());
         }
     }
 
@@ -78,7 +80,9 @@ public class GameBoard extends Board {
     @Override
     public synchronized void drawGame(Graphics g) {
         // TODO: Über alle Objekte im Stapel laufen und sie zeichnen
-
+        for(Sprite sprite : stapel) {
+            sprite.draw(g, this);
+        }
         if (moving != null) {
             moving.draw(g, this);
         }
@@ -110,16 +114,18 @@ public class GameBoard extends Board {
         }
 
         // TODO: Wenn Stapel leer ist, nichts tun
-
+        if(stapel.isEmpty()) {
+            return;
+        }
         // TODO: Oberstes Sprite vom Stapel ansehen und s zuweisen
-        Sprite s = null;
+        Sprite s = stapel.peek();
 
         if (s.intersects(new Point(e.getX(), e.getY()))) {
             points++;
 
             // TODO: Oberstes Sprite vom Stapel entfernen und s zuweisen
 
-            moving = s;
+            moving = stapel.pop();
             moving.setVelocity(new Velocity(0, 20));
         }
     }
@@ -129,12 +135,12 @@ public class GameBoard extends Board {
      */
     @Override
     public boolean updateGame() {
-        
+
         if (moving != null) {
             moving.move();
         }
-        
+
         // TODO: Solange Stapel noch Elemente enthält, true zurückgeben.
-        return true;
+        return !stapel.isEmpty();
     }
 }
