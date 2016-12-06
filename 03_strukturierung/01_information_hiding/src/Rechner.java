@@ -4,49 +4,55 @@
  */
 public class Rechner {
 
-    /** Ergebnis des Taschenrechners. */
-    public double wert;
-    
+
     /** Speicher des Taschenrechners. */
-    public double speicher;
-    
+    private double speicher;
+
     /**
-     * Addiert zwei Wert und schreibt das Ergebnis 
+     * Addiert zwei Wert und schreibt das Ergebnis
      * in die Variable {@code wert}.
-     * 
+     *
      * @param a erster Operand.
      * @param b zweiter Operand.
      */
-    public void addiere(double a, double b) {
-        wert = a + b;
+    public double addiere(double a, double b) {
+        return a + b;
     }
 
     /**
-     * Subtrahiert zwei Wert und schreibt das Ergebnis 
+     * Subtrahiert zwei Wert und schreibt das Ergebnis
      * in die Variable {@code wert}.
-     * 
+     *
      * @param a erster Operand.
      * @param b zweiter Operand.
      */
-    public void subtrahiere(double a, double b) {
-        wert = a - b;
-    }    
+    public double subtrahiere(double a, double b) {
+        return a - b;
+    }
 
     /**
-     * Multipliziert zwei Wert und schreibt das Ergebnis 
+     * Multipliziert zwei Wert und schreibt das Ergebnis
      * in die Variable {@code wert}.
-     * 
+     *
      * @param a erster Operand.
      * @param b zweiter Operand.
      */
-    public void multipliziere(double a, double b) {
-        wert = a * b;
+    public double multipliziere(double a, double b) {
+        return a * b;
     }
-    
+
     /**
-     * Speichert den aktuellen Wert in der Variable {@speicher}.
+     * Speichert einen Wert in der Variable {@speicher}.
      */
-    public void speichern() {
-        speicher = wert;
+    public void speichern(double a) {
+        speicher = a;
+    }
+
+    /**
+     * Gibt den Wert des Speichers zurück.
+     * @return
+     */
+    public double getSpeicher() {
+        return speicher;
     }
 }
